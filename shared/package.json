@@ -1,0 +1,28 @@
+{
+  "name": "@fatedice/shared",
+  "version": "0.1.0",
+  "description": "FateDice shared game logic engine (pure functions)",
+  "main": "dist/gameLogic/index.js",
+  "types": "dist/gameLogic/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": ["**/*.test.ts"],
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": ["gameLogic/**/*.ts", "!gameLogic/*.test.ts", "!gameLogic/types.ts"]
+  }
+}

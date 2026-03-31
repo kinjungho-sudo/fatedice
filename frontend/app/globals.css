@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg:      #0a0a0f;
+  --color-surface: #12121a;
+  --color-border:  #1e1e2e;
+  --color-brand:   #d946ef;
+  --color-brand-dark: #a21caf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: #e2e8f0;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: var(--color-surface); }
+::-webkit-scrollbar-thumb  { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* 유틸 클래스 */
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-brand-500/20;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-bold py-2.5 px-6 rounded-xl
+           transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-semibold py-2.5 px-6 rounded-xl
+           border border-white/20 transition-all duration-200 active:scale-95;
+  }
+  .input-field {
+    @apply w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white
+           placeholder-white/30 focus:outline-none focus:border-brand-500 focus:ring-1
+           focus:ring-brand-500/50 transition-colors;
+  }
+  .grade-normal    { @apply text-slate-300; }
+  .grade-rare      { @apply text-blue-400; }
+  .grade-epic      { @apply text-purple-400; }
+  .grade-legendary { @apply text-yellow-400; }
+}
