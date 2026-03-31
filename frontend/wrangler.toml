@@ -1,0 +1,17 @@
+# Cloudflare Pages — FateDice 프론트엔드 설정
+#
+# Cloudflare Dashboard 빌드 설정:
+#   프레임워크:      Next.js
+#   빌드 명령어:     npm run pages:build
+#   빌드 출력 경로:  .vercel/output/static
+#   루트 디렉토리:   frontend
+#
+# 환경 변수 (Dashboard > Settings > Environment variables):
+#   NEXT_PUBLIC_BACKEND_URL     = https://your-railway-app.railway.app
+#   NEXT_PUBLIC_SUPABASE_URL    = https://your-project.supabase.co
+#   NEXT_PUBLIC_SUPABASE_ANON_KEY = eyJ...
+
+name = "fatedice"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"

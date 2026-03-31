@@ -35,3 +35,7 @@ coverage/
 
 # TypeScript
 *.tsbuildinfo
+
+# Cloudflare
+.wrangler
+.vercel
