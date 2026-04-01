@@ -11,7 +11,7 @@
 
 import { useEffect, useRef } from 'react'
 import type Phaser from 'phaser'
-import type { GameState } from '../../../../shared/gameLogic/types'
+import type { GameState } from '@shared/gameLogic/types'
 
 interface Props {
   gameState:  GameState

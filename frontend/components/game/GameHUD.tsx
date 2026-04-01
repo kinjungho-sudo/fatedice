@@ -6,7 +6,7 @@
  * 플레이어 상태, AG 게이지, 아이템, 이벤트 로그, 액션 버튼
  */
 
-import type { GameState, Player, Item } from '../../../../shared/gameLogic/types'
+import type { GameState, Player, Item } from '@shared/gameLogic/types'
 import { useGameStore } from '../../store/gameStore'
 
 interface Props {

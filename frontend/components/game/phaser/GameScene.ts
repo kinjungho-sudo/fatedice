@@ -13,7 +13,7 @@
  */
 
 import Phaser from "phaser"
-import type { GameState, TileType } from "../../../../../shared/gameLogic/types"
+import type { GameState, TileType } from "@shared/gameLogic/types"
 
 const COLS       = 10
 const ROWS       = 5
@@ -220,25 +220,24 @@ export class GameScene extends Phaser.Scene {
     const playerIdx = this.gameState.players.findIndex(p => p.id === playerId)
     const offset = playerIdx * 16 - 8
 
-    const timeline = this.tweens.createTimeline()
-
-    path.forEach(tileIdx => {
-      const { x, y } = getTileXY(tileIdx)
-      timeline.add({
+    let step = 0
+    const moveNext = () => {
+      if (step >= path.length) {
+        this.isAnimating = false
+        onComplete()
+        return
+      }
+      const { x, y } = getTileXY(path[step++])
+      this.tweens.add({
         targets:  token,
         x:        x + offset,
         y:        y + offset,
         duration: 180,
         ease:     "Power1",
+        onComplete: moveNext,
       })
-    })
-
-    timeline.setCallback("onComplete", () => {
-      this.isAnimating = false
-      onComplete()
-    })
-
-    timeline.play()
+    }
+    moveNext()
   }
 
   updateState(newState: GameState, path?: number[], movedPlayerId?: string) {

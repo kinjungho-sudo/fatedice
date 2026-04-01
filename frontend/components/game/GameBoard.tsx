@@ -105,10 +105,9 @@ export default function GameBoard({
 
             // 타일 번호
             this.add.text(x, y + 18, String(i), {
-              fontSize:   '9px',
-              color:      '#ffffff',
-              alpha:      0.3,
-            }).setOrigin(0.5)
+              fontSize: '9px',
+              color:    '#ffffff',
+            }).setOrigin(0.5).setAlpha(0.3)
 
             // 타일 타입 아이콘
             const icon = this.getTileIcon(tile.type)
