@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev":         "next dev",
-    "build":       "next build",
-    "pages:build": "npx @cloudflare/next-on-pages@1",
-    "start":       "next start",
-    "lint":        "next lint",
-    "typecheck":   "tsc --noEmit"
+    "dev":      "next dev",
+    "build":    "next build",
+    "start":    "next start",
+    "lint":     "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next":           "14.2.3",
@@ -28,8 +27,6 @@
     "postcss":         "^8",
     "autoprefixer":    "^10",
     "eslint":          "^8",
-    "eslint-config-next": "14.2.3",
-    "@cloudflare/next-on-pages": "^1",
-    "wrangler": "^3"
+    "eslint-config-next": "14.2.3"
   }
 }
